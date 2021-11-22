@@ -1,0 +1,75 @@
+<div class="main-cont">
+  <div class="head">
+    <h2>SpaceX Launch Programs</h2>
+  </div>
+
+  <div class="Center">
+    <div class="Center-one">
+      <h3 class="F1">Filters</h3>
+      <h4 class="L1">Launch Year</h4>
+
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="sendYear('2007')">2007</button>
+        <button type="button" class="btn" (click)="sendYear('2008')">2008</button>
+      </div>
+
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="sendYear('2009')">2009</button>
+        <button type="button" class="btn" (click)="sendYear('2010')">2010</button>
+      </div>
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="sendYear('2011')">2011</button>
+        <button type="button" class="btn" (click)="sendYear('2012')">2012</button>
+      </div>
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="sendYear('2013')">2013</button>
+        <button type="button" class="btn" (click)="sendYear('2014')">2014</button>
+      </div>
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="sendYear('2015')">2015</button>
+        <button type="button" class="btn" (click)="sendYear('2016')">2016</button>
+      </div>
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="sendYear('2017')">2017</button>
+        <button type="button" class="btn" (click)="sendYear('2018')">2018</button>
+      </div>
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="sendYear('2019')">2019</button>
+        <button type="button" class="btn" (click)="sendYear('2020')">2020</button>
+      </div>
+      <h4 class="S1">Successfully Launch</h4>
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="sendSuccess('true')">True</button>
+        <button type="button" class="btn" (click)="sendSuccess('false')">False</button>
+      </div>
+      <h4 class="S1">Successfully Landing</h4>
+      <div class="btn-cont">
+        <button type="button" class="btn" (click)="LandSuccLuanchSucc('true')">True</button>
+        <button type="button" class="btn" (click)="LandSuccLuanchSucc('false')">False</button>
+      </div>
+    </div>
+
+    <div class="Center-two">
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-3 fligth" *ngFor="let fights of  flightData">
+            <div class="card">
+              <div class="card-header"> <img class="img-responsive" src="{{fights.links.mission_patch}}">
+              </div>
+              <div class="card-body">
+                <b class="head1">{{fights.mission_name}} #{{fights.flight_number}}</b><br><br>
+
+                <b> Mission Ids:</b> {{fights.mission_id[0]}}<br>
+                <b> Launch Year:</b> {{fights.launch_year}}<br>
+                <b> Successful Launch:</b> {{fights.launch_success}}<br>
+                <b> Successfull Landing :</b> {{fights.rocket.first_stage.cores[0].land_success}}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
